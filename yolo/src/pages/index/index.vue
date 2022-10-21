@@ -1,5 +1,9 @@
 <template>
   <div>
+    <div v-if="showLogin">
+      <LoginWindow @changeShow="getModel(arguments)"></LoginWindow>
+    </div>
+    
     <div class="show">
       <div class="mark-text">当前分数</div>
       <div class="mark">{{mark}}</div>
@@ -18,27 +22,43 @@
 </template>
 
 <script>
-
+import LoginWindow from "@/components/LoginWindow"
 export default {
+  components:{
+    LoginWindow
+
+  },
   data(){
     return{
-      mark:0
+      mark:0,
+      userinfo:{},
+      showLogin:false
     }
   },
   methods:{
     addMark(add){
       this.mark = this.mark + add
-      
+    },
+    getModel(val){
+      this.showLogin = val[0]
+      this.userinfo = val[1]
 
     }
+
+   
+  },
+  mounted(){
+    const userinfo = wx.getStorageSync('userinfo')
+    if(userinfo.openId){
+      this.userinfo = userinfo
+    }else{
+      wx.hideTabBar()
+      this.showLogin = true
+    }
+
   }
- 
+  
 
- 
-
- 
-
- 
 }
 </script>
 
@@ -74,4 +94,12 @@ export default {
   }.left{ background:#feb600;
   margin-right:80px;
   }
+
+
+
+
+
+
+ 
+
 </style>

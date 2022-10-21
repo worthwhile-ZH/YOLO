@@ -29,7 +29,7 @@ const CONF = {
     appSecret: '',
 
     // 是否使用腾讯云代理登录小程序
-    useQcloudLogin: true,
+    useQcloudLogin: false,
 
     /**
      * MySQL 配置，用来存储 session 和用户信息
@@ -41,7 +41,7 @@ const CONF = {
         port: 3306,
         user: 'root',
         db: 'cAuth',
-        pass: '',
+        pass: 'wanusacalvin8',
         char: 'utf8mb4'
     },
 
