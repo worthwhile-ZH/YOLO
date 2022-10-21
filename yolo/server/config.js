@@ -8,11 +8,11 @@ const CONF = {
     ,
     // 腾讯云相关配置可以查看云 API 秘钥控制台： https://console.cloud.tencent.com/capi
    
-    qcloudAppId: '1314478521'
+    qcloudAppId: ''
     ,
-    qcloudSecretId: 'AKIDkMlwuc5SdZHkGdnkX5NTSIxSCFD6weGd'
+    qcloudSecretId: ''
     ,
-    qcloudSecretKey: 'GH4cu1wgBQvELHxaDlVWTPCmALHxOdeP'
+    qcloudSecretKey: ''
     ,
     wxMessageToken: 'weixinmsgtoken'
     ,
@@ -23,10 +23,10 @@ const CONF = {
     rootPathname: '',
 
     // 微信小程序 App ID
-    appId: 'wxf44d1e4b17f37171',
+    appId: '',
 
     // 微信小程序 App Secret
-    appSecret: '332c344eaad3032ef308361e5bb87d60',
+    appSecret: '',
 
     // 是否使用腾讯云代理登录小程序
     useQcloudLogin: true,
