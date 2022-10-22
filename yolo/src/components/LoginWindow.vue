@@ -23,6 +23,8 @@
 <script>
 import config from "@/config"
 import qcloud from "wafer2-client-sdk"
+//在util.js 里面暴露没加default  加了就不用{}
+import {showSuccess} from "@/util"
 export default {
     methods:{
         login(){
@@ -34,6 +36,7 @@ export default {
               this.loginSuccess(userInfo)
               this.$emit("changeShow",false,userInfo)
               wx.showTabBar()
+              showSuccess("登录成功")
           },
           fail: err =>{
               console.log('登录失败', err);
@@ -41,7 +44,9 @@ export default {
       });
     },
     loginSuccess(userInfo){
-      wx.setStorageSync('userinfo','userInfo')
+      //（key,value）value 不能加"" 否则会变成string
+      wx.setStorageSync('userinfo',userInfo)
+
 
     }
     }
