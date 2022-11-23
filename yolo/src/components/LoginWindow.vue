@@ -5,10 +5,10 @@
       <div class="modal-content">
         <img class="img" src="../../static/images/littleTip-huang.jpg" >
         <div class="content-text">
-          <p class="key-bold">真自律是一款自律神器</p>
-          <p class="key-bold">将生活想象成通关打怪，打败自己的心魔加分。被心魔打败减分</p>
-          <p class="little-content">午饭没有忍住吃麻辣烫，吃的绿色蔬菜，加5分</p>
-          <p class="little-content">但是晚饭还是没有忍住T_T,罪恶罪恶，减10分</p>
+          <p class="key-bold">You Only Live Once</p>
+          <p class="key-bold">记录习惯，享受美好生活</p>
+          <p class="little-content">我的生活不曾取悦我，所以我创造了自己的生活</p>
+          <p class="little-content">古之立大事者，不惟有超世之才，亦必有坚忍不拔之志</p>
         
         </div>
 

@@ -12,7 +12,7 @@
 
     </div>
     <div class="contain">
-      <div class="row">
+      <!-- <div class="row">
         <label class="left">
           <img class="img" src="/static/images/homework.png" alt="">
         </label>
@@ -41,9 +41,9 @@
         <label class="right" for="">
           >
         </label>
-      </div>
+      </div> -->
 
-      <div class="row">
+      <div class="row" @click="showOpinion">
         <label class="left">
           <img class="img" src="/static/images/approval.png" alt="">
         </label>
@@ -82,6 +82,12 @@ export default {
       '立志言为本，修身行乃先'
  ]
       this.quote = quotes[rank1]
+    },
+    showOpinion(){
+      wx.navigateTo({
+        url:"/pages/opinion/main"
+      })
+
     }
 
   },

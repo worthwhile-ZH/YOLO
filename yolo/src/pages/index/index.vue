@@ -5,7 +5,7 @@
     </div>
     
     <div class="show">
-      <div class="mark-text">当前分数</div>
+      <div class="mark-text">当前积分</div>
       <div class="mark">{{mark}}</div>
     </div>
     <div class="row">
@@ -23,6 +23,7 @@
 
 <script>
 import LoginWindow from "@/components/LoginWindow"
+import {showSuccess,showModel,post,get} from "@/util"
 export default {
   components:{
     LoginWindow
@@ -36,13 +37,38 @@ export default {
     }
   },
   methods:{
-    addMark(add){
+    async addMark(add){
+      //请求后端语句
+      try{
+        const data = {
+        openid:this.userinfo.openId,
+        add:add
+      }
+      const res = await post('/weapp/createrecord',data)
+
       this.mark = this.mark + add
+      }catch(e){
+        showModel("请求失败","请重试哦")
+        console.log("从后端返回的执行错误信息是：",e)
+      }
+
     },
     getModel(val){
       this.showLogin = val[0]
       this.userinfo = val[1]
+      this.getCurrentMark()
 
+    },
+    async getCurrentMark(){
+      try{
+        const res = await get('/weapp/getmark',{openid:this.userinfo.openId})
+        console.log("从后端传过来的分数：",res)
+        this.mark = res.mark
+
+      }catch(e){
+        showModel("请求失败","请下拉页面刷新重试")
+        console.log("从后端返回的执行错误信息是：",e)
+      }
     }
 
    
@@ -55,6 +81,10 @@ export default {
       wx.hideTabBar()
       this.showLogin = true
     }
+
+  },
+  onShow(){
+    this.getCurrentMark()
 
   }
   
