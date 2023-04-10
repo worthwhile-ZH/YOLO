@@ -52,6 +52,24 @@
           >
         </label>
       </div>
+      <div class="row" @click="addhabits">
+        <label class="left">
+          <img class="img" src="/static/images/approval.png" alt="">
+        </label>
+        <label class="name" for="">&nbsp;&nbsp;添加习惯</label>
+        <label class="right" for="">
+          >
+        </label>
+      </div>
+      <div class="row" @click="Clock">
+        <label class="left">
+          <img class="img" src="/static/images/approval.png" alt="">
+        </label>
+        <label class="name" for="">&nbsp;&nbsp;全屏闹钟</label>
+        <label class="right" for="">
+          >
+        </label>
+      </div>
 
     </div>
   </div>
@@ -88,6 +106,16 @@ export default {
         url:"/pages/opinion/main"
       })
 
+    },
+    addhabits(){
+      wx.navigateTo({
+        url:"/pages/addhabits/main"
+      })
+    },
+    Clock(){
+      wx.navigateTo({
+        url:"/pages/filipper/main"
+      })
     }
 
   },

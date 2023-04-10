@@ -85,15 +85,18 @@ export default {
         },
         async submmit(){
           if(this.word_count>0){
+            //获取前端页面数据
               const data={
               opinion:this.opinion,
+              // 将src转为字符串
               src:this.src.join(","),
               wechat:this.wechat,
               openid:wx.getStorageSync('userinfo').openId
             }
             
             try{
-              const res = await post('/weapp/createopioion',data)
+              //请求后端 await等到后端执行完成，并获取到返回数据之后再往下执行
+              const res = await post('/weapp/createopinion',data)
               console.log("从后端返回执行正确的信息：",res)
               showModel('提交成功',"已经将您的反馈提交给开发者~")
 

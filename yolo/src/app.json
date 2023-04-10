@@ -1,8 +1,14 @@
 {
   "pages": [
-    "pages/index/main",
+    
+    "pages/selfStudyRoom/main",
     "pages/me/main",
-    "pages/opinion/main"
+    "pages/index/main",
+    "pages/opinion/main",
+    "pages/addhabits/main",
+    "pages/filipper/main"
+
+    
     
   ],
   "window": {
@@ -12,20 +18,30 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar":{
-    "selectedColor":"EA5149",
+    "selectedColor":"#EA5149",
     "list":[
       {
         "text":"首页",
         "pagePath":"pages/index/main",
-        "inconPath":"static/images/danhuang.png",
+        "iconPath":"static/images/danhuang.png",
         "selectedIconPath":"static/images/danhuang-active.png"
+      },
+      
+      {
+        "text":"自习室",
+        "pagePath":"pages/selfStudyRoom/main",
+        "iconPath":"static/images/binggan.png",
+        "selectedIconPath":"static/images/binggan-active.png"
+       
       },
       {
         "text":"我的",
         "pagePath":"pages/me/main",
-        "inconPath":"static/images/binggan.png",
+        "iconPath":"static/images/binggan.png",
         "selectedIconPath":"static/images/binggan-active.png"
+       
       }
+      
 
     ]
   }

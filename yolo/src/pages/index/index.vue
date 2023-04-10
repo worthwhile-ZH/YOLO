@@ -4,6 +4,8 @@
       <LoginWindow @changeShow="getModel(arguments)"></LoginWindow>
     </div>
     
+
+    
     <div class="show">
       <div class="mark-text">当前积分</div>
       <div class="mark">{{mark}}</div>
@@ -17,16 +19,19 @@
       <div class="button right" @click="addMark(5)">+5</div>
       <div class="button left" @click="addMark(-5)">-5</div>
     </div>
+    <homeadd></homeadd>
 
   </div>
 </template>
 
 <script>
 import LoginWindow from "@/components/LoginWindow"
+import homeadd from "@/components/addhobits/homeadd"
 import {showSuccess,showModel,post,get} from "@/util"
 export default {
   components:{
-    LoginWindow
+    LoginWindow,
+    homeadd
 
   },
   data(){
@@ -86,6 +91,17 @@ export default {
   onShow(){
     this.getCurrentMark()
 
+  },
+  onPullDownReresh(){
+    this.getCurrentMark()
+    wx.stopPullDownRefresh()
+
+  },
+  onShareAppMessage(){
+    return{
+      title:"YOLO",
+      path:"/pages/index/main"
+    }
   }
   
 

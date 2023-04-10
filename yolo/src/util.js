@@ -23,6 +23,23 @@ export function showModel (title,content){
         // }
       })
 }
+export function showgiveup (content){
+  wx.showModal({
+  content: content,
+  title:1,
+  showCancel:true,
+  success (res) {
+      if (res.confirm) {
+      
+      console.log('用户点击确定')
+
+      } else if (res.cancel) {
+      console.log('用户点击取消')
+      }
+  }
+  })
+}
+
 
 function request(url,method,data){
   return new Promise(

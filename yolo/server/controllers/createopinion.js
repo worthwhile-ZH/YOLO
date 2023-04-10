@@ -13,6 +13,7 @@ module.exports = async(ctx) => {
             opinion,src,wechat,openid
 
         })
+        // 向前端传递数据
         ctx.state.data = {
             code:0,
             msg:"success"
